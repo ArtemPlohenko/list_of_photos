@@ -4,8 +4,6 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import AlbumsPage from "./AlbumsPage";
 import AlbumPage from "./AlbumPage";
 
-// import Todo from './Components/Todo';
-
 function App() {
   return (
     <Router>
