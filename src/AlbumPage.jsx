@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {useParams, Link} from "react-router-dom";
+import {Button, ListGroup, Form} from 'react-bootstrap';
 
 const AlbumPage = (props) => {
   const {id} = useParams();
@@ -22,29 +23,38 @@ const AlbumPage = (props) => {
 
   return (
     <div className="wrapper">
-      <Link to="/albums">Back</Link>
-      <div>
-        <button onClick={() => setOffset(Math.max(offset -size, 0))}>
-          prev
-        </button>
+      <Link
+        className="mb-15"
+        to="/albums">
+          Back
+      </Link>
+      <div className="btns-block flex-group mb-15">
+        <Button onClick={() => setOffset(Math.max(offset -size, 0))}>prev</Button>
         {offset / size}
-        <button onClick={() => setOffset(offset + size)}>next</button>
+        <Button onClick={() => setOffset(offset + size)}>next</Button>
       </div>
-      <input
-        type="text"
-        placeholder="Search..."
-        onChange={(event) => {
-          setSearch(event.target.value);
-        }}
-      />
-      <ul>
-        {photos.map((photo) => (
-          <li key={photo.id}>
-            <h3>{photo.title}</h3>
-            <img alt={props.title} src={photo.thumbnailUrl} />
-          </li>
-        ))}
-      </ul>
+
+      <Form>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Control
+            type="text"
+            placeholder="Search..."
+            onChange={(event) => {
+            setSearch(event.target.value);
+            }}
+           />
+        </Form.Group>
+      </Form>
+      <div className="list-group-holder">
+        <ListGroup>
+          {photos.map((photo) => (
+            <ListGroup.Item key={photo.id}>
+              <h2 className="title-h2">{photo.title}</h2>
+              <img alt={props.title} src={photo.thumbnailUrl} />
+            </ListGroup.Item>
+          ))}
+        </ListGroup>
+      </div>
     </div>
   );
 };

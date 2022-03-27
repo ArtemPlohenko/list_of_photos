@@ -1,5 +1,80 @@
 
-/* .App {
+.App {
 
-} */
+}
 
+/* //special classes */
+.mb-15 {
+    display: block;
+    margin-bottom: 15px;
+}
+.flex-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 150px;
+}
+
+.list-albums {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.list-albums a {
+    color: #000;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+
+.first-line {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.list-group-holder .list-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.list-group-holder .list-group-item {
+    width: 100%;
+    min-height: 280px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.title-h2 {
+    font-size: 18px;
+}
+
+@media (min-width: 425px) {
+    .list-group-holder .list-group-item {
+        width: 50%;
+        height: auto;
+    }
+    .list-albums a {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 600px) {
+    .list-group-holder .list-group {
+        overflow-y: scroll;
+    }
+    .list-group-holder .list-group-item {
+        width: 33.33%;
+    }
+}
+
+@media (min-width: 768px) {
+    .list-group-holder .list-group {
+        height: 575px;
+    }
+    .list-group-holder .list-group-item {
+        width: 25%;
+    }
+}
