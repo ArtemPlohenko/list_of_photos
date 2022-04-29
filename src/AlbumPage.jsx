@@ -22,6 +22,7 @@ const AlbumPage = (props) => {
   }, [offset, search]);
 
   return (
+    
     <div className="wrapper">
       <Link
         className="mb-15"
@@ -49,7 +50,7 @@ const AlbumPage = (props) => {
         <ListGroup>
           {photos.map((photo) => (
             <ListGroup.Item key={photo.id}>
-              <h2 className="title-h2">{photo.title}</h2>
+              <h2 className="title-h2">{photo.`title`}</h2>
               <img alt={props.title} src={photo.thumbnailUrl} />
             </ListGroup.Item>
           ))}
